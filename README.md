@@ -4,31 +4,26 @@
 https://www.cloudskillsboost.google/games/3085
 
 
-LAB
-Google Clout - CI/CD in a Google Cloud World
+##Google Clout - CI/CD in a Google Cloud World<br>
 https://www.cloudskillsboost.google/games/3085/labs/18831
 
 
-LAB
-Google Clout - Event Driven Cloud Functions
+##Google Clout - Event Driven Cloud Functions<br>
 https://www.cloudskillsboost.google/games/3085/labs/18832
 
 
-LAB
-Google Clout - Import Data into a Cloud Spanner Database
+##Google Clout - Import Data into a Cloud Spanner Database<br>
 https://www.cloudskillsboost.google/games/3085/labs/18833
 
 
-LAB
-Google Clout - Change Streams for Cloud Spanner
+##Google Clout - Change Streams for Cloud Spanner<br>
 https://www.cloudskillsboost.google/games/3085/labs/18834
 
 
-LAB
-Google Clout - Use VPC Flow Logs to unblock Traffic Flows
+##Google Clout - Use VPC Flow Logs to unblock Traffic Flows<br>
 https://www.cloudskillsboost.google/games/3085/labs/18835
 
 
-LAB
-Google Clout - Use IAM Impersonation to Deploy a Virtual Machine Instance
+## Google Clout - Use IAM Impersonation to Deploy a Virtual Machine Instance<br>
 https://www.cloudskillsboost.google/games/3085/labs/18836
+
