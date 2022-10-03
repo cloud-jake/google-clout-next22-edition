@@ -1,0 +1,1 @@
+gcloud dataflow flex-template run streamjob --template-file-gcs-location gs://dataflow-templates-us-east1/latest/flex/Spanner_Change_Streams_to_BigQuery --region us-east1  --parameters spannerInstanceId=orders,spannerDatabase=orders-db,spannerMetadataInstanceId=meta,spannerMetadataDatabase=meta-db,spannerChangeStreamName=streamjob,bigQueryDataset=meta_stream

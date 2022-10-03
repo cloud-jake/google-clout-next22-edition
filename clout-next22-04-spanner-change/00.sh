@@ -43,12 +43,3 @@ bq --location=$REGION --project_id=${PROJECT} mk --dataset --default_table_expir
 gcloud spanner databases ddl update --project $PROJECT $SOURCE_DATABASE --instance=${SOURCE_INSTANCE} --ddl="CREATE CHANGE STREAM ${STREAM_NAME} FOR ${SOURCE_TABLE_NAME};"
 
 
-
-# dataflow redo
-#gcloud dataflow jobs run $INSTANCE --gcs-location gs://dataflow-templates/latest/GCS_Text_to_Cloud_Spanner --region $REGION 
-
-
-
-# Add Data
-#gcloud spanner databases execute-sql $SOURCE_DATABASE --instance=$SOURCE_INSTANCE --sql="INSERT INTO orders(OrderID,CustomerID,OrderDate,Price,ProductID) VALUES(123,456,'2022-04-26',99,789);"
-
