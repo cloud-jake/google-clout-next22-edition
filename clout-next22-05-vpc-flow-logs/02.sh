@@ -1,9 +1,12 @@
 #!/bin/bash
 
-MYSOURCEIP=
-MYTCP=
-MYUDP=
+#MYSOURCEIP=
+#MYTCP=
+#MYUDP=
 
+MYSOURCEIP=10.0.0.2
+MYTCP=80
+MYUDP=32767
 
 
 source variables
