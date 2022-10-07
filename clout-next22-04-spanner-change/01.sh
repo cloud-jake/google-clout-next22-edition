@@ -6,20 +6,30 @@
 
 source variables.inc 
 
-echo "dataflow jobs run $DATAFLOW_JOB "
-#    --gcs-location gs://dataflow-templates/2022-07-18-00_rc00/spanner-changestreams-to-bigquery \
-#    --region $REGION \
-#    --parameters \
-echo "Job Name: ${DATAFLOW_JOB}"
-echo ""
-echo "REGION: ${REGION}"
-echo ""
-echo "spannerInstanceId=$SOURCE_INSTANCE"
-echo "spannerDatabase=$SOURCE_DATABASE"
-echo "spannerMetadataInstanceId=$INSTANCE"
-echo "spannerMetadataDatabase=$DATABASE"
-echo "spannerChangeStreamName=$STREAM_NAME"
-echo "bigQueryDataset=$BQ_DATASET"
+#PROJECT=
+
+#REGION=
+
+#INSTANCE=
+#DATABASE=
+#TABLE_NAME=
+
+#BQ_DATASET=
+
+################################################
+#LOCATION=regional-${REGION}
+
+#SOURCE_INSTANCE=orders
+#SOURCE_DATABASE=orders-db
+#SOURCE_TABLE_NAME=orders
+
+#STREAM_NAME=ordersstream
+
+#DATAFLOW_JOB=streamjob
+
+gcloud config set project $PROJECT
 
 
-gcloud dataflow flex-template run ${DATAFLOW_JOB} --template-file-gcs-location gs://dataflow-templates-us-east1/latest/flex/Spanner_Change_Streams_to_BigQuery --region ${REGION}  --parameters spannerInstanceId=${SOURCE_INSTANCE},spannerDatabase=${SOURCE_DATABASE},spannerMetadataInstanceId=${INSTANCE},spannerMetadataDatabase=${DATABASE},spannerChangeStreamName=${DATAFLOW_JOB},bigQueryDataset=${BQ_DATASET}
+# Add Data
+gcloud spanner databases execute-sql $SOURCE_DATABASE --instance=$SOURCE_INSTANCE --sql="INSERT INTO orders(OrderID,CustomerID,OrderDate,Price,ProductID) VALUES(123,456,'2022-04-26',99,789);"
+

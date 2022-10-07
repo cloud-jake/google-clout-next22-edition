@@ -43,3 +43,17 @@ bq --location=$REGION --project_id=${PROJECT} mk --dataset --default_table_expir
 gcloud spanner databases ddl update --project $PROJECT $SOURCE_DATABASE --instance=${SOURCE_INSTANCE} --ddl="CREATE CHANGE STREAM ${STREAM_NAME} FOR ${SOURCE_TABLE_NAME};"
 
 
+echo "dataflow jobs run $DATAFLOW_JOB "
+echo "Job Name: ${DATAFLOW_JOB}"
+echo ""
+echo "REGION: ${REGION}"
+echo ""
+echo "spannerInstanceId=$SOURCE_INSTANCE"
+echo "spannerDatabase=$SOURCE_DATABASE"
+echo "spannerMetadataInstanceId=$INSTANCE"
+echo "spannerMetadataDatabase=$DATABASE"
+echo "spannerChangeStreamName=$STREAM_NAME"
+echo "bigQueryDataset=$BQ_DATASET"
+
+
+gcloud dataflow flex-template run ${DATAFLOW_JOB} --template-file-gcs-location gs://dataflow-templates-us-east1/latest/flex/Spanner_Change_Streams_to_BigQuery --region ${REGION}  --parameters spannerInstanceId=${SOURCE_INSTANCE},spannerDatabase=${SOURCE_DATABASE},spannerMetadataInstanceId=${INSTANCE},spannerMetadataDatabase=${DATABASE},spannerChangeStreamName=${DATAFLOW_JOB},bigQueryDataset=${BQ_DATASET}
