@@ -1,7 +1,7 @@
 # Google Clout - CI/CD in a Google Cloud World
 # https://www.cloudskillsboost.google/games/3085/labs/18831
 
-export PROJECT_ID=""
+export PROJECT_ID=`gcloud config get-value project`
 export REGION=""
 
 export REPO="pop-kustomize"

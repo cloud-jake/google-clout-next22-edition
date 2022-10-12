@@ -22,7 +22,7 @@ cloudresourcemanager.googleapis.com sourcerepo.googleapis.com
 
 #gcloud beta builds triggers create cloud-source-repositories --repo=${REPO} --branch-pattern='.*' --build-config=cloudbuild.yaml --service-account=${SA}
 
-gcloud beta builds triggers create cloud-source-repositories --repo=$REPO --branch-pattern="^master$" --build-config=cloudbuild.yaml  --require-approval
+gcloud beta builds triggers create cloud-source-repositories --repo=$REPO --branch-pattern="^master$" --build-config=cloudbuild.yaml 
 
 
 #gcloud beta builds triggers create cloud-source-repositories \
