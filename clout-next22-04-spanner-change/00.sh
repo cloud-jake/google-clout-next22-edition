@@ -56,4 +56,4 @@ echo "spannerChangeStreamName=$STREAM_NAME"
 echo "bigQueryDataset=$BQ_DATASET"
 
 
-gcloud dataflow flex-template run ${DATAFLOW_JOB} --template-file-gcs-location gs://dataflow-templates-us-east1/latest/flex/Spanner_Change_Streams_to_BigQuery --region ${REGION}  --parameters spannerInstanceId=${SOURCE_INSTANCE},spannerDatabase=${SOURCE_DATABASE},spannerMetadataInstanceId=${INSTANCE},spannerMetadataDatabase=${DATABASE},spannerChangeStreamName=${STREAM_NAME},bigQueryDataset=${BQ_DATASET} --num-workers=1
+gcloud dataflow flex-template run ${DATAFLOW_JOB} --template-file-gcs-location gs://dataflow-templates-us-east1/latest/flex/Spanner_Change_Streams_to_BigQuery --region ${REGION}  --parameters spannerInstanceId=${SOURCE_INSTANCE},spannerDatabase=${SOURCE_DATABASE},spannerMetadataInstanceId=${INSTANCE},spannerMetadataDatabase=${DATABASE},spannerChangeStreamName=${STREAM_NAME},bigQueryDataset=${BQ_DATASET} --max-workers=1
